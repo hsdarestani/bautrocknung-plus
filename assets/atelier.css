@@ -301,3 +301,10 @@ a,button{-webkit-tap-highlight-color:transparent}
  .bp-service-image img{transition:none!important}
  .reveal{opacity:1!important;transform:none!important}
 }
+
+/* Crediting reference photographs without disrupting the footer grid. */
+.site-footer .footer-bottom{display:flex;align-items:center;flex-wrap:wrap;gap:12px 23px}
+.site-photo-credit{display:block;width:100%;order:4;font-size:11px;color:#9fb0b1}
+.site-photo-credit a{text-decoration:underline;text-underline-offset:3px}
+.site-photo-credit a:hover{color:#fff}
+@media(max-width:640px){.site-footer .footer-bottom{align-items:flex-start;gap:18px}.site-photo-credit{order:0}}
