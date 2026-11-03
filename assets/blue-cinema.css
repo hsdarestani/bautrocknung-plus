@@ -249,3 +249,12 @@ html{scroll-behavior:auto}
 .js-motion .blue-image-reveal.is-visible img{transform:scale(1)}
 .blue-header.is-scrolled{box-shadow:0 8px 30px rgba(5,33,55,.07)}
 @media(prefers-reduced-motion:reduce){.js-motion .blue-reveal{opacity:1;transform:none}}
+
+/* Photography refresh: preserve high-resolution detail and natural tonality. */
+.blue-hero__photo img{object-position:60% 50%;filter:saturate(.9) contrast(1.055)}
+.blue-image-reveal img{filter:saturate(.91) contrast(1.03)}
+.blue-image-reveal.is-visible img{filter:saturate(.95) contrast(1.03)}
+.blue-chapter--first .blue-chapter__image img{object-position:53% 52%}
+.blue-chapter--reverse .blue-chapter__image img{object-position:45% 48%}
+.blue-final__photo img{object-position:50% 42%;filter:saturate(.77) contrast(1.03)}
+@media(max-width:650px){.blue-hero__photo img{object-position:56% 50%}}
