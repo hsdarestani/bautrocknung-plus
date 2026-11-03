@@ -104,7 +104,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 .service-card .image{grid-row:1;grid-column:2;height:auto;min-height:210px;align-self:stretch;overflow:hidden;margin:14px 0;background:#c9d0cb}
 .service-card .image img{filter:saturate(.47);transition:filter .4s var(--ease-out),transform .8s var(--ease-out)}
 .service-card:hover .image img{transform:scale(1.03);filter:saturate(.69)}
-.service-card .image:after{content:"";position:absolute;inset:0;pointer-events:none}
+.service-card .image:after{display:none}
 .service-card-body{grid-row:1;grid-column:1;order:0;display:grid;grid-template-columns:90px minmax(0,1fr);grid-template-rows:auto auto 1fr;align-content:center;column-gap:24px;padding:34px 0;min-width:0}
 .service-card .number{grid-column:1;grid-row:1/4;font-size:10px;letter-spacing:.075em;color:#74848a;margin:6px 0}
 .service-card h3{grid-column:2;grid-row:1;font-size:clamp(27px,3.1vw,44px);font-weight:650;letter-spacing:-.055em;line-height:1.12;margin:0 0 10px}
