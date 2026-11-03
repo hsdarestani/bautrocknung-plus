@@ -29,9 +29,9 @@ The stylesheet `assets/style.css` contains structural base styles; `assets/ateli
 ## Content & functional limits
 
 - The contact form and incident report prepare an email draft in the visitor's own email application; **they do not transmit or save data directly**, and the visitor must explicitly send the draft.
-- Photographs are examples from Unsplash and do **not** represent actual company employees or jobs. Replace them with licensed, real project photography when available.
+- The prototype uses selected authentic restoration photographs from iDry Columbus licensed CC BY 4.0, credited in the website and Impressum. They are NOT company projects. Replace with the company's own licensed project photos before final launch.
 - Review the Impressum and Datenschutz pages and verify company information prior to placing this website on the public primary domain.
-- The interactive process overview is explanatory, not live measurement data.
+- The homepage features a clear, static three-step service process and real, appropriately licensed representative photography; no simulated measurements.
 - Existing service and legal-page slugs have redirects in `_redirects`.
 
 ## Site structure
