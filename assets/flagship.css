@@ -156,3 +156,62 @@ body:not(.flagship) .site-footer{background:#101d21}
 @media(prefers-reduced-motion:reduce){.depth-in{opacity:1!important;transform:none!important}.depth-service-media img{transition:none!important}}
 /* Content remains visible for full-page screenshots, slow devices and script failure. */
 .depth-in,.depth-in.is-visible{opacity:1;transform:none}
+
+/* Interior architecture — shared visual discipline, not homepage copies. */
+body:not(.flagship) .page-hero{
+  background:#e5e4dc;
+  padding:82px 0 104px;
+  position:relative;isolation:isolate;
+  border-bottom:1px solid #bbbeb4;
+}
+body:not(.flagship) .page-hero:after{
+  content:"";position:absolute;inset:0 0 auto 0;height:1px;
+  background:linear-gradient(90deg,#b27d67 0 11%,transparent 11%);
+  pointer-events:none
+}
+body:not(.flagship) .page-hero .breadcrumbs{font-size:10px;letter-spacing:.08em;color:#74786f;margin-bottom:64px}
+body:not(.flagship) .page-hero .eyebrow{font-size:10px;letter-spacing:.16em;color:#966e5e}
+body:not(.flagship) .page-hero h1{
+  max-width:1060px;font-weight:780;
+  font-size:clamp(55px,7.4vw,111px);line-height:1;letter-spacing:-.076em;
+  color:#223333;margin:22px 0 34px;text-wrap:balance;
+}
+body:not(.flagship) .page-hero p{max-width:690px;font-size:17px;line-height:1.75;color:#4e5d5b}
+body:not(.flagship) .interior-wasserschaden .page-hero{background:#e9dfd6}
+body:not(.flagship) .interior-leckortung .page-hero{background:#dce2db}
+body:not(.flagship) .interior-bautrocknung .page-hero{background:#e7e1d4}
+body:not(.flagship) .split{gap:clamp(35px,6vw,105px)}
+body:not(.flagship) .split-image{background:#bcc0b6}
+body:not(.flagship) .split-image img,
+body:not(.flagship) .split img{height:min(530px,55vw);object-fit:cover;filter:grayscale(.26) contrast(1.04)}
+body:not(.flagship) .page-section h2{font-weight:780;font-size:clamp(41px,4.8vw,70px);line-height:1.12;letter-spacing:-.066em}
+body:not(.flagship) .page-section p{font-size:15px;line-height:1.8;color:#526361}
+body:not(.flagship) .service-directory .service-row{grid-template-columns:64px 1.3fr 1fr;gap:25px;padding:31px 0;transition:background .25s,padding .25s}
+body:not(.flagship) .service-directory .service-row h3{font-size:clamp(36px,4.4vw,65px);font-weight:760;line-height:1.06}
+body:not(.flagship) .service-directory .service-row p{font-size:14px;max-width:340px}
+body:not(.flagship) .service-directory .row-plus{display:none}
+body:not(.flagship) .service-directory .service-n{font-size:12px;color:#ad644d}
+body:not(.flagship) .service-directory .service-row:hover{background:#e5e4db}
+body:not(.flagship) .service-directory .service-row:hover{padding-left:16px}
+body:not(.flagship) .contact-close{border-top:1px solid #b1bbb5;padding-top:70px;padding-bottom:86px}
+body:not(.flagship) .contact-close h2{font-weight:780}
+body:not(.flagship) .site-footer .brand,
+body:not(.flagship) .site-footer nav a{color:#e6e9e1}
+body:not(.flagship) .form-panel input,
+body:not(.flagship) .form-panel textarea,
+body:not(.flagship) .form-panel select{border-color:#9eaaa3;background:#f6f4ec}
+body:not(.flagship) .form-panel input:focus-visible,
+body:not(.flagship) .form-panel textarea:focus-visible{outline:2px solid #b6755e;outline-offset:2px}
+body:not(.flagship) .choice:has(input:checked){background:#e5d6c9;border-color:#b36a50}
+body:not(.flagship) .wizard-progress .active{background:#b36a50}
+@media(max-width:760px){
+ body:not(.flagship) .page-hero{padding:42px 0 53px}
+ body:not(.flagship) .page-hero .breadcrumbs{margin-bottom:33px}
+ body:not(.flagship) .page-hero h1{font-size:clamp(47px,11vw,68px);letter-spacing:-.07em;margin:20px 0 25px}
+ body:not(.flagship) .page-hero p{font-size:14px}
+ body:not(.flagship) .split-image img,body:not(.flagship) .split img{height:340px}
+ body:not(.flagship) .page-section h2{font-size:39px}
+ body:not(.flagship) .service-directory .service-row{grid-template-columns:24px 1fr;gap:12px;padding:24px 0}
+ body:not(.flagship) .service-directory .service-row p{grid-column:2}
+ body:not(.flagship) .service-directory .service-row h3{font-size:35px}
+}
