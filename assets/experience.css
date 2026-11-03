@@ -269,3 +269,17 @@ body{background:#fff}
  .phase-copy.active{animation:none!important}
  .service-card:hover,.choice:hover{transform:none}
 }
+
+/* Finishing touches: navigation lightline, sequential editorial entrance, lifecycle support. */
+.site-header::after{content:"";position:absolute;left:0;bottom:-1px;width:var(--reading-progress,0%);height:2px;background:linear-gradient(90deg,#2384b6,#b3f4ff);box-shadow:0 0 15px rgba(102,213,252,.46);z-index:2;pointer-events:none}
+.hero-evolved .hero-content .eyebrow{animation:heroArrive .75s .05s both var(--ease)}
+.hero-evolved .hero-content h1{animation:heroArrive .9s .14s both var(--ease)}
+.hero-evolved .hero-content p{animation:heroArrive .9s .29s both var(--ease)}
+.hero-evolved .hero-actions{animation:heroArrive .85s .41s both var(--ease)}
+.hero-evolved .hero-proofs{animation:heroArrive .85s .53s both var(--ease)}
+.hero-evolved .hero-art{animation:artArrive 1.15s .3s both var(--ease)}
+.page-hero .inner{animation:heroArrive .8s both var(--ease)}
+.visuals-paused .hero-ambient i,.visuals-paused .instrument-target,.visuals-paused .instrument-scan::before,.visuals-paused .signal-dot,.visuals-paused .statement-circles,.visuals-paused .blueprint .sensor-halo,.visuals-paused .blueprint .dry-path,.visuals-paused .blueprint .pipe-inner{animation-play-state:paused!important}
+@keyframes heroArrive{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes artArrive{from{opacity:0;transform:translateY(24px) scale(.972)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.hero-evolved .hero-content .eyebrow,.hero-evolved .hero-content h1,.hero-evolved .hero-content p,.hero-evolved .hero-actions,.hero-evolved .hero-proofs,.hero-evolved .hero-art,.page-hero .inner{animation:none!important;opacity:1!important;transform:none!important}}
