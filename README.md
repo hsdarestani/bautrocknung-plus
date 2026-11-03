@@ -1,4 +1,4 @@
-# Bautrocknung Plus — Graphite / Signal
+# Bautrocknung Plus — Blue Cinema
 
 Custom German-language website for Bautrocknung Plus GbR in Friedberg, built for Cloudflare Pages.
 
@@ -18,7 +18,7 @@ No Node.js build, dependencies or private API keys are required.
 
 ## Design
 
-The November 2026 redesign replaces the old architectural comparison demo with a high-contrast, photograph-led visual identity called **Graphite / Signal**. This uses matte graphite, warm white, a limited signal-lime accent, wide display typography (Unbounded) and readable copy typography (IBM Plex Sans). The homepage is in `index.html`, styles in `assets/vx.css`, and its accessible mobile menu in `assets/vx.js`.
+The November 2026 redesign replaces the old architectural comparison demo with a high-contrast, photograph-led visual identity called **Blue Cinema**. This uses deep original-brand blues, real restoration photography, Sora headlines and Manrope body type. The homepage is in `index.html`, styles in `assets/blue-cinema.css`, and its accessible mobile menu in `assets/blue-cinema.js`.
 
 All interior pages retain their functional structures and navigation; `assets/vx-inner.css` is loaded after `assets/design.css` to harmonize their design with the new visual identity.
 

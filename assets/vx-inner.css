@@ -1,114 +1,207 @@
-/* Graphite / Signal — interior page system. Original structural CSS remains underneath. */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700;800&display=swap');
-:root{--paper:#edf0eb;--ink:#172326;--muted:#627472;--line:#ccd7d2;--accent:#d5f35b;--dark:#121f22;--navy:#121f22;--blue:#d5f35b;--max:1300px}
-body{background:#101a1d;color:#edf0eb;font-family:'IBM Plex Sans',Arial,sans-serif;font-size:16px}
-.shell,.container{width:min(1300px,calc(100% - 104px));margin-inline:auto}
-h1,h2,h3{font-family:'Unbounded',sans-serif;font-weight:600;letter-spacing:-.07em}
-p{line-height:1.76}
-.label,.eyebrow,.breadcrumbs,figcaption,.study-note,.stepno,.service-n{font-family:'IBM Plex Mono',monospace;letter-spacing:.085em;font-size:10px}
-.accent,.brand-dot,.service-n,.row-plus{color:#c5e952}
-.site-header{background:#0d1719;color:#edf0eb;border-bottom:1px solid #344246;position:sticky;top:0;z-index:90}
-.header-inner{min-height:86px;height:auto;gap:30px}
-.brand{font:700 13px/1.18 'Unbounded',sans-serif;letter-spacing:-.06em;color:#f3f5f1;gap:0}
-.brand-mark{display:none}.brand-dot{color:#d5f35b}
-.desktop-nav{gap:32px;font-size:13px;margin-left:auto;font-weight:600}
-.desktop-nav a:hover,.desktop-nav a.active{color:#d5f35b;border-color:#d5f35b}
-.header-phone{font:500 11px 'IBM Plex Mono',monospace;color:#d7e2dd}
-.button,.btn{background:#d5f35b;border:1px solid #d5f35b;color:#112023;font:700 13px 'IBM Plex Sans',sans-serif;min-height:51px;padding:13px 24px;transition:background .22s,color .22s,border-color .22s}
-.button:hover,.btn:hover{background:#fff;color:#112023;border-color:#fff}
-.button.small{padding:11px 21px;min-height:44px}
-.btn-outline,.wizard-navigation .btn-outline{background:transparent;color:#213134;border:1px solid #899f9c}
-.btn-outline:hover,.wizard-navigation .btn-outline:hover{background:#dde5e0;color:#152226}
-#menu-toggle{color:#f5f7f3}#menu-toggle span{color:#d5f35b}
-#mobile-nav.open{background:#132125;border-bottom:1px solid #445455;padding:14px 24px 24px;box-shadow:0 20px 32px #0003}
-#mobile-nav a{color:#eff4f0;border-color:#384a4a}
-#mobile-nav a:hover{color:#d5f35b}
-:focus-visible{outline:2px solid #d5f35b;outline-offset:4px}
-::selection{background:#d5f35b;color:#101a1d}
-.page-hero{background:radial-gradient(ellipse 65% 130% at 87% 46%,#304044 0%,transparent 70%),#111c20;border-color:#344549;padding:100px 0 105px}
-.page-hero .inner{max-width:1020px}
-.page-hero .breadcrumbs{color:#9dafab;margin-bottom:55px}
-.page-hero .eyebrow{color:#d5f35b}
-.page-hero h1{font-size:clamp(43px,5.4vw,76px);line-height:1.12;max-width:1040px;margin:26px 0 30px;color:#edf2ee}
-.page-hero p{font-size:16px;color:#c1cfca;max-width:710px;line-height:1.8}
-.interior-wasserschaden .page-hero,.interior-leckortung .page-hero,.interior-bautrocknung .page-hero{background:radial-gradient(ellipse 65% 130% at 90% 47%,#304044,transparent 72%),#111c20}
-.service-drawing{display:none!important}
-.page-section,.section,.section-tight{background:#edf0eb;color:#152429;padding:100px 0}
-.page-section h2,.section h2,.section-head h2{font-size:clamp(32px,4vw,55px);line-height:1.15;margin-top:24px;font-weight:600}
-.page-section h3{font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:23px;letter-spacing:-.035em}
-.page-section p,.section p,.split-content p{font-size:15px;color:#596e6b;line-height:1.8}
-.eyebrow{color:#5c726d}
-.section-head>div{max-width:750px}
-.section-head p{color:#61736e;font-size:15px;max-width:410px}
-.split{gap:clamp(40px,7vw,100px);align-items:center}
-.split .split-image{overflow:hidden;background:#c8d1cb}
-.split img{min-height:430px;max-height:530px;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.04)}
-.split ul{margin:29px 0 35px}
-.split li{padding:17px 0;border-color:#c3d0c9;font-size:13px;color:#354a48;font-weight:600}
-.split li:before{content:'';display:inline-block;height:2px;width:13px;background:#748e82;vertical-align:middle;margin-right:16px}
-.section-tight.dark,.section.dark,.dark{background:#121f22;color:#edf0eb}
-.dark .eyebrow{color:#d5f35b}
-.dark h2{color:#edf0eb;font-size:clamp(32px,4vw,56px)}
-.dark p,.dark .section-head p{color:#b7c8c0}
-.dark .split li{border-color:#3b4f4d;color:#cbdad3}
-.dark .split li:before{background:#d5f35b}
-.process-grid{gap:35px}
-.process-step{border-top:1px solid #536865;padding:23px 0}
-.process-step h3{font-family:'IBM Plex Sans',sans-serif;font-size:23px;font-weight:600;margin:26px 0 13px}
-.process-step p{color:#b1c4bc;font-size:14px}
-.service-directory{padding-top:55px;padding-bottom:80px;background:#edf0eb}
-.service-row{border-color:#c9d4cd;padding:40px 0;transition:padding .25s,background .25s}
-.service-row:last-child{border-color:#c9d4cd}
-.service-row h3{font-family:'Unbounded',sans-serif;font-size:clamp(28px,3vw,45px);font-weight:600;letter-spacing:-.065em}
-.service-row .label{color:#607770}
-.service-row p{font-size:14px;color:#61736f}
-.service-row:hover{background:#e1e8e1;padding-left:20px;color:#213532}
-.row-plus{font-size:24px;color:#637b6d;font-weight:400}
-.faq{max-width:1020px}
-.faq h2{font-size:clamp(32px,3.2vw,44px)}
-.faq details{border-color:#c7d4cc}
-.faq summary{font-family:'IBM Plex Sans',sans-serif;font-size:16px;font-weight:600}
-.faq summary:after{color:#567869}
-.faq details p{font-size:14px;color:#60736d}
-.contact-close{background:#d5f35b;color:#132226;max-width:none;width:100%;padding:90px max(52px,calc((100% - 1300px)/2));border:0}
-.contact-close h2{font-size:clamp(38px,4.5vw,70px);line-height:1.15;letter-spacing:-.075em}
-.contact-close .label{color:#253f31;font-weight:600}
-.contact-close .big-phone{font:600 clamp(23px,2.6vw,37px) 'Unbounded',sans-serif;letter-spacing:-.07em}
-.contact-close p{color:#334a37}
-.contact-close .button{background:#132125;color:#f1f5ef;border-color:#132125}
-.contact-close .button:hover{background:#f5f8f3;color:#172927;border-color:#172927}
-.contact-grid{gap:75px}
-.contact-card{border-top:3px solid #7c9388;padding-top:20px}
-.contact-line{border-color:#c5d0ca}
-.contact-line small{color:#637b72}
-.contact-line a,.contact-line strong{font-size:17px;font-weight:600;color:#1c3436}
-.form-panel>p{color:#5c726e}
-.field label{font-weight:600;color:#354d48}
-.field input,.field select,.field textarea{background:#f7f8f4;border:1px solid #b6c7be;color:#152528;border-radius:0}
-.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid #759080;outline-offset:2px}
-.checkbox-line input{accent-color:#203c32}
-.form-note{color:#687d74!important}
-.wizard-wrap{background:#edf0eb}
-.wizard-progress span{background:#bfccc3}
-.wizard-progress .active{background:#324e41}
-.choice{background:#f8faf5;border-color:#b9c6bc}
-.choice:hover{background:#e4ebe3;border-color:#799789}
-.choice:has(input:checked){background:#dce6dc;border-color:#42614f}
-.choice input{accent-color:#274332}
-.error-msg{color:#8f322b!important}
-.legal{max-width:900px}
-.legal h2{font-family:'IBM Plex Sans',sans-serif;font-size:25px;letter-spacing:-.03em}
-.legal h3{font-family:'IBM Plex Sans',sans-serif;font-size:19px}
-.legal a{color:#33574b;text-decoration:underline}
-.site-footer{background:#0d1719;color:#eaf0ec;padding:75px 0 26px}
-.footer-grid{grid-template-columns:1.4fr 1fr 1fr;gap:55px}
-.site-footer .brand{color:#fff;font-size:15px}
-.site-footer .label{color:#d5f35b}
-.footer-grid p,.footer-grid a{color:#b7c8bf;font-size:13px}
-.footer-grid a:hover{color:#d5f35b}
-.footer-bottom{border-color:#344747;font-size:11px;color:#94aaa1;margin-top:75px}
-.footer-bottom a{color:#b5c9c1}
-.emergency-bar{background:#0e191b}
-@media(max-width:1000px){.shell,.container{width:calc(100% - 70px)}.header-inner{gap:18px}.header-phone{display:none}.contact-close{padding-left:35px;padding-right:35px}.split{gap:40px}}
-@media(max-width:760px){.shell,.container{width:calc(100% - 36px)}.header-inner{height:70px}.brand{font-size:11px}.desktop-nav,.header-inner>.button{display:none}#menu-toggle{color:#f0f4ee}#menu-toggle span{color:#d5f35b}#mobile-nav.open{display:flex}.page-hero{padding:60px 0 70px}.page-hero .breadcrumbs{margin-bottom:35px}.page-hero h1{font-size:clamp(38px,9vw,60px);line-height:1.16}.page-hero p{font-size:15px}.page-section,.section,.section-tight{padding:65px 0}.page-section h2,.section h2{font-size:clamp(30px,8vw,44px)}.split{display:grid;grid-template-columns:1fr}.split img{min-height:0;height:320px}.service-row{padding:28px 0}.service-row h3{font-size:clamp(24px,7vw,33px)}.contact-close{padding:75px 18px}.contact-close h2{font-size:clamp(32px,8vw,48px)}.contact-close .big-phone{font-size:clamp(21px,5.6vw,28px)}.footer-grid{grid-template-columns:1fr;gap:31px}.footer-bottom{margin-top:45px}.site-footer{padding-bottom:110px}.emergency-bar{display:grid;grid-template-columns:1fr 1.3fr;padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:9px}.emergency-bar a{border:1px solid #758b86;color:#e8f0e9}.emergency-bar a:last-child{background:#d5f35b;border-color:#d5f35b;color:#122023}.contact-grid,.faq-layout{grid-template-columns:1fr;gap:35px}.form-grid{grid-template-columns:1fr}.choice-grid{grid-template-columns:1fr}.interior-impressum .page-hero h1,.interior-datenschutz .page-hero h1{font-size:clamp(37px,9vw,54px)}}
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;650;700;800&family=Sora:wght@400;500;600;700&display=swap');
+:root{--paper:#f6fafb;--ink:#173748;--muted:#607b89;--line:#d6e4e9;--accent:#247fa9;--dark:#0b2f46;--navy:#0b2f46;--blue:#247fa9;--max:1280px;--ice:#e8f2f6}
+html{scroll-padding-top:83px}
+body{background:#f6fafb;color:var(--ink);font:400 16px/1.75 'Manrope',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Sora','Manrope',sans-serif;font-weight:500;letter-spacing:-.055em}
+a:hover{color:#237fa6}
+:focus-visible{outline:3px solid #63b4d3;outline-offset:3px}
+::selection{background:#bddfea;color:#08304a}
+.shell,.container{width:min(1280px,calc(100% - 104px));margin-inline:auto}
+.label,.eyebrow,.breadcrumbs,.photo-credit,figcaption,.study-note,.stepno,.service-n{font-family:'Manrope',sans-serif;font-weight:750;letter-spacing:.095em;font-size:10px}
+.label,.eyebrow{color:#347895}
+.accent,.brand-dot{color:#298bb4}
+.site-header{background:rgba(248,251,252,.985);backdrop-filter:blur(18px);border-bottom:1px solid #dce8ed;box-shadow:none}
+.header-inner{height:83px;gap:29px}
+.site-header .brand{font-family:'Sora',sans-serif;font-size:13px;line-height:1.17;letter-spacing:-.02em;font-weight:650;color:#113c53;gap:0}
+.brand-mark{display:none!important}
+.site-header .desktop-nav{margin-left:auto;font:700 12px 'Manrope',sans-serif;gap:33px}
+.site-header .desktop-nav a{transition:color .25s}
+.site-header .desktop-nav a.active{border-bottom:1px solid #5596ae}
+.site-header .header-phone{font:700 12px 'Manrope',sans-serif;color:#3b5b6c;white-space:nowrap}
+.button,.btn{background:#144967;border:1px solid #144967;border-radius:0;color:#fff;font:750 13px 'Manrope',sans-serif;min-height:52px;padding:15px 24px;transition:background .25s,border-color .25s,color .25s,transform .3s}
+.button.small{font-size:12px;min-height:44px;padding:13px 20px}
+.button:hover,.btn:hover{background:#2d7da3;border-color:#2d7da3;transform:translateY(-2px);color:#fff}
+.btn-white{background:#fff!important;border-color:#fff!important;color:#10364d!important}
+.btn-white:hover{background:#dceef5!important;border-color:#dceef5!important}
+.btn-outline{background:transparent!important;border-color:#97b4c2!important;color:#12445d!important}
+.btn-outline:hover{background:#e4f0f4!important}
+#menu-toggle{background:transparent;color:#13455b}
+#menu-toggle span{color:#237da4}
+#mobile-nav{background:#f9fcfd}
+#mobile-nav a{font-weight:700}
+.page-hero{padding:105px 0 106px;border:0;min-height:500px;background:#e8f1f5;overflow:hidden}
+.page-hero .inner{position:relative;z-index:2}
+.page-hero .breadcrumbs{margin-bottom:43px;font-size:11px;color:#688592}
+.page-hero .eyebrow{font-size:11px;color:#347fa2}
+.page-hero h1{font-size:clamp(48px,6.35vw,86px);font-weight:500;letter-spacing:-.068em;line-height:1.105;max-width:980px;margin:29px 0;word-break:normal}
+.page-hero p{font-size:16px;max-width:670px;color:#5f7b89;line-height:1.85}
+.page-hero .service-drawing{display:none}
+.interior-wasserschaden .page-hero,.interior-leckortung .page-hero,.interior-bautrocknung .page-hero,.interior-ueber-uns .page-hero,.interior-leistungen .page-hero{
+background-color:#0b304a;background-size:cover;background-position:center center;color:#f7fbfd;isolation:isolate;min-height:590px}
+.interior-wasserschaden .page-hero{background-image:linear-gradient(90deg,rgba(5,31,51,.98) 0%,rgba(10,57,84,.87) 52%,rgba(7,41,63,.22) 100%),url('/assets/ceiling-water-stain-corner-joint-damage-2.jpg')}
+.interior-leckortung .page-hero{background-image:linear-gradient(90deg,rgba(5,31,51,.98) 0%,rgba(10,57,84,.86) 52%,rgba(7,41,63,.25) 100%),url('/assets/extech-moisture-meter-wall-inspection-4.jpg')}
+.interior-bautrocknung .page-hero{background-image:linear-gradient(90deg,rgba(5,31,51,.98) 0%,rgba(10,57,84,.88) 52%,rgba(7,41,63,.24) 100%),url('/assets/water-damage-drying-equipment-setup.jpg')}
+.interior-ueber-uns .page-hero{background-image:linear-gradient(90deg,rgba(5,31,51,.98) 0%,rgba(10,57,84,.89) 56%,rgba(7,41,63,.3) 100%),url('/assets/flir-thermal-camera-water-damage-detection-4.jpg')}
+.interior-leistungen .page-hero{background-image:linear-gradient(90deg,rgba(5,31,51,.97) 0%,rgba(10,57,84,.87) 52%,rgba(7,41,63,.22) 100%),url('/assets/flir-thermal-camera-water-damage-detection-4.jpg')}
+.interior-wasserschaden .page-hero .breadcrumbs,.interior-leckortung .page-hero .breadcrumbs,.interior-bautrocknung .page-hero .breadcrumbs,.interior-ueber-uns .page-hero .breadcrumbs,.interior-leistungen .page-hero .breadcrumbs{color:#c5dae5}
+.interior-wasserschaden .page-hero .eyebrow,.interior-leckortung .page-hero .eyebrow,.interior-bautrocknung .page-hero .eyebrow,.interior-ueber-uns .page-hero .eyebrow,.interior-leistungen .page-hero .eyebrow{color:#b2daec}
+.interior-wasserschaden .page-hero p,.interior-leckortung .page-hero p,.interior-bautrocknung .page-hero p,.interior-ueber-uns .page-hero p,.interior-leistungen .page-hero p{color:#d0e4ee}
+.page-section{padding:105px 0}
+.page-section h2,.section h2,.section-head h2,.split-content h2,.contact-close h2{font-family:'Sora',sans-serif;font-weight:500;letter-spacing:-.062em;line-height:1.13}
+.page-section h2{font-size:clamp(35px,4.1vw,58px);margin:25px 0}
+.page-section h3{font-size:27px;font-weight:550}
+.page-section p{font-size:15px;color:#607984;line-height:1.85;margin-bottom:20px}
+.page-section .label,.page-section .eyebrow{color:#327f9f}
+.section,.section-tight{padding:100px 0}
+.section h2,.section-head h2{font-size:clamp(36px,4.4vw,60px)}
+.section-head{gap:60px;margin-bottom:50px}
+.section-head p{font-size:15px;max-width:430px}
+.split{grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,105px);align-items:center}
+.split-content h2{font-size:clamp(39px,4.2vw,60px);margin:22px 0}
+.split-content p{font-size:15px;color:#687f89;line-height:1.85}
+.split img,.split-media img{height:535px;filter:saturate(.75) contrast(1.02);object-fit:cover}
+.interior-ueber-uns .split-media img{object-fit:cover;filter:saturate(.75)}
+.interior-wasserschaden .split-media{clip-path:none}
+.interior-bautrocknung .split-media{border:0;padding:0}
+.interior-leckortung .split{grid-template-columns:1fr 1fr}
+.interior-leckortung .split-media{order:0}
+.image-credit{font-size:10px!important;color:#728995;margin-top:13px!important}
+.dark .image-credit{color:#bfd5e0}
+.checklist li,.split li{border-color:#cbdce3;color:#35586a;line-height:1.6}
+.checklist li:before,.split li:before{content:"";display:inline-block;width:11px;height:2px;background:#3989ab;vertical-align:middle;margin-right:17px}
+.dark,.section.dark,.section-tight.dark{background:linear-gradient(125deg,#072337,#124360);color:#fff}
+.dark .eyebrow,.dark .label{color:#b5d7e6}
+.dark p,.dark .split-content p{color:#c6dce8}
+.dark h2{font-size:clamp(37px,4.4vw,64px)}
+.process-grid{gap:36px}
+.process-step{border-top:1px solid #63859a;padding-top:32px}
+.process-step h3{font-size:24px;font-weight:550;margin:40px 0 15px}
+.process-step p{font-size:14px;color:#c5dce8;line-height:1.8}
+.stepno{color:#aacddd;font-size:11px}
+.service-directory{padding-top:42px;padding-bottom:83px}
+.service-row{grid-template-columns:60px 1.4fr 1fr 235px;gap:30px;min-height:196px;padding:22px 0;align-items:center;border-color:#d1e2e8;transition:background .3s,transform .3s}
+.service-row:last-child{border-color:#d1e2e8}
+.service-row:hover{padding-left:0;background:#edf5f8;color:#163f57}
+.service-row .service-n{color:#3b8db0;font-size:11px;font-weight:800}
+.service-row .label{color:#648591;font-size:10px}
+.service-row h3{font-size:clamp(31px,3.4vw,49px);font-weight:550;margin-top:10px;letter-spacing:-.055em}
+.service-row p{color:#66818e;max-width:320px;font-size:13px;line-height:1.8}
+.service-row .row-plus{display:none}
+.service-row .list-image{display:block;position:relative;height:145px;overflow:hidden}
+.service-row .list-image img{height:100%;width:100%;object-fit:cover;filter:saturate(.72);transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.service-row:hover .list-image img{transform:scale(1.06)}
+.faq{max-width:930px}
+.faq h2{font-size:clamp(38px,4vw,55px);margin:25px 0 37px}
+.faq details{border-color:#d3e0e7}
+.faq summary{font-size:15px;font-weight:700;color:#21475b;padding:26px 0}
+.faq summary:after{color:#3682a3}
+.faq details p{font-size:14px;color:#697f8b;line-height:1.8}
+.contact-grid{grid-template-columns:.8fr 1.2fr;gap:75px}
+.contact-card{border-top:2px solid #358eb3}
+.contact-line{border-color:#d2dfe4}
+.contact-line small{font-size:10px;color:#648a98}
+.contact-line a,.contact-line strong{font-size:17px;font-weight:600;line-height:1.65}
+.form-panel>p{font-size:14px;color:#637c88}
+.form-grid{gap:20px}
+.field label{font-size:12px;font-weight:700;color:#436879}
+.field input,.field select,.field textarea{border:1px solid #c6d7df;background:#fff;min-height:51px;padding:14px 16px;border-radius:2px;color:#173b4e;font-size:14px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid #70b2cf;outline-offset:1px}
+.field textarea{min-height:140px}
+.checkbox-line input{accent-color:#267aa3}
+.form-note{color:#6d8390;font-size:12px!important}
+.wizard-wrap{max-width:950px;margin:auto;background:#f1f7f9;border:1px solid #deebef;padding:43px 48px}
+.wizard-progress{gap:8px}
+.wizard-progress span{height:3px;background:#c6dbe3}
+.wizard-progress .active{background:#3388af}
+.choice-grid{gap:13px}
+.choice{background:#fff;border-color:#cbdde4;min-height:95px;transition:background .2s,border-color .2s}
+.choice:has(input:checked){background:#dfeff5;border-color:#3d91b7}
+.choice .chip{color:#3089b1}
+.choice strong{font-weight:700;color:#23485a}
+.error-msg{color:#ad3131!important}
+.contact-close{background:#eaf3f7;border:0;padding:81px max(52px,calc((100vw - 1280px)/2));width:100%!important;grid-template-columns:1.1fr .9fr}
+.contact-close h2{font-size:clamp(40px,4.8vw,69px)}
+.contact-close .big-phone{font-family:'Sora',sans-serif;font-weight:550;font-size:clamp(23px,2.5vw,37px)}
+.contact-close p{color:#657f8a}
+.site-footer{background:#092737;color:#eef7fb;padding:74px 0 30px}
+.site-footer .brand{color:white}
+.site-footer .brand-dot{color:#a6d6e8}
+.site-footer .label{color:#aac9d7}
+.footer-grid{gap:50px}
+.footer-grid p,.footer-grid a{color:#d0e3eb;font-size:13px;line-height:1.8}
+.footer-grid nav{gap:14px}
+.footer-bottom{border-color:#426274;color:#aac7d6;font:500 11px 'Manrope',sans-serif;margin-top:70px}
+.footer-bottom a{margin-left:27px;color:#c6dbe5}
+.emergency-bar{display:none}
+.legal{max-width:860px}
+.legal h2{font-size:26px}
+.legal p,.legal li{line-height:1.9;font-size:14px}
+.interior-impressum .page-hero h1,.interior-datenschutz .page-hero h1{font-size:clamp(49px,6vw,80px)}
+@media(max-width:1150px){
+.shell,.container{width:calc(100% - 70px)}
+.header-inner{gap:22px}
+.header-phone{display:none}
+.service-row{grid-template-columns:40px 1.3fr 1fr 175px;gap:20px}
+.contact-close{padding-left:35px;padding-right:35px}
+}
+@media(max-width:900px){
+.shell,.container{width:calc(100% - 46px)}
+.header-inner{height:72px}
+.site-header .desktop-nav{display:none}
+.site-header .header-inner>.button{display:none}
+#menu-toggle{display:flex;margin-left:auto;border:0;background:none;color:#13465e;font:700 13px 'Manrope',sans-serif}
+#mobile-nav{display:none;background:#f6fafb;border-color:#dce9ed}
+#mobile-nav.open{display:flex;flex-direction:column}
+#mobile-nav a{padding:16px 0;font-size:15px}
+.page-hero{padding:75px 0;min-height:0}
+.interior-wasserschaden .page-hero,.interior-leckortung .page-hero,.interior-bautrocknung .page-hero,.interior-ueber-uns .page-hero,.interior-leistungen .page-hero{min-height:500px}
+.page-hero h1{font-size:clamp(45px,7vw,67px)}
+.split{gap:37px}
+.split-media img,.split img{height:450px}
+.service-row{grid-template-columns:38px 1.25fr .95fr 145px;gap:13px}
+.service-row h3{font-size:32px}
+.contact-grid{gap:38px}
+.contact-close{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+.shell,.container{width:calc(100% - 38px)}
+.header-inner{height:67px}
+.site-header .brand{font-size:11px}
+#menu-toggle{display:flex}
+.page-hero{padding:59px 0}
+.page-hero .breadcrumbs{margin-bottom:31px;font-size:10px}
+.page-hero h1{font-size:clamp(41px,9.7vw,61px);margin:20px 0}
+.page-hero p{font-size:14px}
+.interior-wasserschaden .page-hero,.interior-leckortung .page-hero,.interior-bautrocknung .page-hero,.interior-ueber-uns .page-hero,.interior-leistungen .page-hero{min-height:465px;background-position:62% 50%}
+.page-section,.section,.section-tight{padding:66px 0}
+.page-section h2,.section h2,.section-head h2{font-size:clamp(34px,8.3vw,45px)}
+.page-section p,.split-content p{font-size:14px}
+.section-head{display:block}
+.section-head p{margin-top:20px}
+.split,.interior-leckortung .split{display:grid;grid-template-columns:1fr;gap:30px}
+.split-media img,.split img{height:320px}
+.process-grid{grid-template-columns:1fr;gap:23px}
+.process-step h3{margin:21px 0 12px}
+.service-directory{padding:30px 0 70px}
+.service-row{grid-template-columns:30px minmax(0,1fr) 105px;gap:14px;padding:25px 0;min-height:0}
+.service-row h3{font-size:27px}
+.service-row p{grid-column:2/3;grid-row:2;font-size:12px}
+.service-row .list-image{grid-column:3;grid-row:1/3;height:112px;align-self:center}
+.contact-grid{grid-template-columns:1fr;gap:30px}
+.contact-close{padding:63px 19px;display:block}
+.contact-close h2{font-size:43px}
+.contact-close .big-phone{font-size:24px}
+.form-grid{grid-template-columns:1fr}
+.wizard-wrap{padding:27px 20px}
+.choice-grid{grid-template-columns:1fr}
+.choice{min-height:76px;padding:17px}
+.site-footer{padding:63px 0 100px}
+.footer-grid{grid-template-columns:1fr;gap:32px}
+.footer-bottom{display:flex;flex-direction:column;gap:16px;align-items:start;margin-top:48px}
+.footer-bottom a{margin:0 23px 0 0}
+.emergency-bar{display:grid;grid-template-columns:.8fr 1.2fr;position:fixed;bottom:0;left:0;right:0;padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:#f8fbfc;border-top:1px solid #d6e4e9;gap:8px;z-index:90;box-shadow:0 -10px 32px #00233920}
+.emergency-bar a{padding:13px 8px;text-align:center;color:#184961;font-size:12px;font-weight:800;border:1px solid #a2bcc8}
+.emergency-bar a:last-child{background:#144966;border-color:#144966;color:white}
+.interior-impressum .page-hero h1,.interior-datenschutz .page-hero h1{font-size:50px}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
