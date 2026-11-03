@@ -1,59 +1,34 @@
-# Bautrocknung Plus
+# Bautrocknung Plus — Graphite / Signal
 
-German-language static website for Bautrocknung Plus GbR, Friedberg.
+Custom German-language website for Bautrocknung Plus GbR in Friedberg, built for Cloudflare Pages.
 
-## Cloudflare Pages
+## Live preview
 
+https://bautrocknung-plus.pages.dev/
+
+## Deployment
+
+- Connect GitHub repository `hsdarestani/bautrocknung-plus`
 - Production branch: `main`
-- Framework preset: **None**
+- Framework preset: `None`
 - Build command: `exit 0`
-- Build output directory: `.`
+- Output directory: `.`
 
-No dependencies, installation, build pipeline, API keys or external fonts.
+No Node.js build, dependencies or private API keys are required.
 
-## Design: Unter der Oberfläche
+## Design
 
-A purpose-built architectural identity: mineral paper, oxide red, dark olive,
-editorial typography and an original SVG section through a damp building element.
-The illustration is schematic, not a survey or a live measurement. Service pages
-use distinct palettes, image compositions and practical, service-specific guidance.
+The November 2026 redesign replaces the old architectural comparison demo with a high-contrast, photograph-led visual identity called **Graphite / Signal**. This uses matte graphite, warm white, a limited signal-lime accent, wide display typography (Unbounded) and readable copy typography (IBM Plex Sans). The homepage is in `index.html`, styles in `assets/vx.css`, and its accessible mobile menu in `assets/vx.js`.
 
-`assets/design.css` is the complete design system; `assets/site.js` manages
-navigation, current-page state and email-draft forms; `assets/design.js` adds
-progressive motion and keyboard support. Reduced motion is respected. All content
-remains visible without animation or JavaScript. The reporting wizard needs JS;
-phone and email alternatives remain available.
+All interior pages retain their functional structures and navigation; `assets/vx-inner.css` is loaded after `assets/design.css` to harmonize their design with the new visual identity.
 
-## Contact flow
+## Features and limitations
 
-Contact and damage-report forms prepare a `mailto:` draft in the visitor's email
-application. They **do not transmit or store submissions**. The visitor must send
-the email. Validation covers required selections, five-digit German postcode,
-contact fields, email format and privacy acknowledgement. There is no upload or
-backend. Photos can be attached in the visitor's email app.
-
-## Images and content
-
-Photographs are served locally to avoid runtime requests to a third-party image
-server. They are illustrative photographs by iDry Columbus, CC BY 4.0, not company
-projects or staff. Attribution and modification notices appear with the images
-and in the Impressum. Source: https://idrycolumbus.com/free-restoration-photos/.
-The SVG section artwork was created specifically for this website.
-
-Existing company details, legal content, routes, redirects, canonical metadata
-and LocalBusiness structured data are preserved. The privacy notice reflects
-local image delivery. Company/legal details still require owner verification
-before switching the business's primary domain.
-
-## Verification (3 November 2026)
-
-Two browser review/refinement passes covered desktop and mobile compositions.
-The homepage was checked in 375, 390, 768, 1024 and 1440 px iframe viewports; all
-nine inner pages were checked at 375 and 1440 px. No horizontal overflow was
-observed. These are desktop Chrome responsive viewports, not physical-device tests.
-
-Verified mobile menu opening, required wizard selections, progression through
-all four steps, invalid/valid postcode behavior, accessible contact inputs and
-FAQ interaction. Static checks cover local links, image files and alt text,
-unique IDs, one H1 per page, JSON-LD syntax and JavaScript syntax. Email delivery
-is not tested because this site has no submission backend.
+- Clear service links for Wasserschäden, Leckortung and Bautrocknung.
+- Phone call and water-damage reporting CTAs on desktop and mobile.
+- Contact and damage-report forms on inner pages still create a **mailto draft**, not a server submission. The user must send the email from their own mail application.
+- Factual company information, canonical URLs, legal routes, and SEO structured data are retained.
+- Illustrative photographs originate from iDry Columbus under CC BY 4.0, credited in the site; they are not company staff or completed projects.
+- Fonts load from Google Fonts in the current preview. For a public German production site, consider **self-hosting** the open-source font files and revise Datenschutz accordingly.
+- The new homepage has been rendered locally for desktop (1440px), small desktop (1024px), and mobile (390px) with no horizontal overflow. The local testing environment could not fetch the remote font files, so deployed font rendering requires additional device-based verification.
+- Privacy and legal notices need the business owner's review before migrating the public primary domain.
