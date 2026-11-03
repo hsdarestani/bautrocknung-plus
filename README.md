@@ -9,7 +9,7 @@ Static site, no build step. Connect this GitHub repository to Cloudflare Pages.
 - Production branch: `main`
 - Framework preset: `None`
 - Build command: *(leave empty)*
-- Build output directory: `/`
+- Build output directory: `.`
 
 The site uses static HTML, CSS, and JavaScript. No backend or tracking services are installed. The incident report on the site opens the user's mail application with a prefilled request; it does not save or transmit data to a server.
 
