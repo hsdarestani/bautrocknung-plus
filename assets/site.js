@@ -70,7 +70,7 @@
     const el = $(selector, scope);
     return el && String(el.value || '').trim() !== '';
   };
-  const show = () => {
+  const show = (initial = false) => {
     steps.forEach((el,i) => { el.hidden = i !== step; });
     indicators.forEach((el,i) => el.classList.toggle('active', i <= step));
     back.hidden = step === 0;
@@ -78,13 +78,13 @@
     error.textContent = '';
     const focus = $('h2', steps[step]);
     if (focus) focus.focus({preventScroll:true});
-    wizard.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+    if (!initial) wizard.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
   };
   const validate = () => {
     const active = steps[step];
     if (step === 0 && !$('input[name="damage"]:checked', active)) return 'Bitte wählen Sie die Art des Schadens.';
     if (step === 1 && !$('input[name="urgency"]:checked', active)) return 'Bitte wählen Sie die Dringlichkeit.';
-    if (step === 2 && !required('input[name="postcode"]', active)) return 'Bitte geben Sie Ihre Postleitzahl ein.';
+    if (step === 2 && (!required('input[name="postcode"]', active) || !$('input[name="postcode"]',active).checkValidity())) return 'Bitte geben Sie eine gültige Postleitzahl ein.';
     if (step === 3) {
       for (const name of ['name','phone','email']) {
         const input = $('[name="' + name + '"]', active);
@@ -118,5 +118,5 @@
     error.style.color='#1b647d';
     error.textContent='Ihr E-Mail-Programm wurde geöffnet. Bitte senden Sie die vorbereitete E-Mail dort ab; auf dieser Website wurde noch nichts übertragen.';
   });
-  show();
+  show(true);
 })();
