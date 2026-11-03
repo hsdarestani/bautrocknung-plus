@@ -38,11 +38,11 @@ a:hover{color:#237fa6}
 .page-hero .service-drawing{display:none}
 .interior-wasserschaden .page-hero,.interior-leckortung .page-hero,.interior-bautrocknung .page-hero,.interior-ueber-uns .page-hero,.interior-leistungen .page-hero{
 background-color:#0b304a;background-size:cover;background-position:center center;color:#f7fbfd;isolation:isolate;min-height:590px}
-.interior-wasserschaden .page-hero{background-image:linear-gradient(90deg,rgba(5,31,51,.98) 0%,rgba(10,57,84,.87) 52%,rgba(7,41,63,.22) 100%),url('/assets/ceiling-water-stain-corner-joint-damage-2.jpg')}
-.interior-leckortung .page-hero{background-image:linear-gradient(90deg,rgba(5,31,51,.98) 0%,rgba(10,57,84,.86) 52%,rgba(7,41,63,.25) 100%),url('/assets/extech-moisture-meter-wall-inspection-4.jpg')}
-.interior-bautrocknung .page-hero{background-image:linear-gradient(90deg,rgba(5,31,51,.98) 0%,rgba(10,57,84,.88) 52%,rgba(7,41,63,.24) 100%),url('/assets/water-damage-drying-equipment-setup.jpg')}
-.interior-ueber-uns .page-hero{background-image:linear-gradient(90deg,rgba(5,31,51,.98) 0%,rgba(10,57,84,.89) 56%,rgba(7,41,63,.3) 100%),url('/assets/flir-thermal-camera-water-damage-detection-4.jpg')}
-.interior-leistungen .page-hero{background-image:linear-gradient(90deg,rgba(5,31,51,.97) 0%,rgba(10,57,84,.87) 52%,rgba(7,41,63,.22) 100%),url('/assets/flir-thermal-camera-water-damage-detection-4.jpg')}
+.interior-wasserschaden .page-hero{background-image:linear-gradient(90deg,rgba(5,31,51,.98) 0%,rgba(10,57,84,.87) 52%,rgba(7,41,63,.22) 100%),url('https://images.pexels.com/photos/10631759/pexels-photo-10631759.jpeg?auto=compress&cs=tinysrgb&w=1800')}
+.interior-leckortung .page-hero{background-image:linear-gradient(90deg,rgba(5,31,51,.98) 0%,rgba(10,57,84,.86) 52%,rgba(7,41,63,.25) 100%),url('https://images.pexels.com/photos/17882785/pexels-photo-17882785.jpeg?auto=compress&cs=tinysrgb&w=1800')}
+.interior-bautrocknung .page-hero{background-image:linear-gradient(90deg,rgba(5,31,51,.98) 0%,rgba(10,57,84,.88) 52%,rgba(7,41,63,.24) 100%),url('https://idrycolumbus.com/wp-content/uploads/2026/03/dehumidifier-setup-basement-water-damage-columbus-scaled.jpg')}
+.interior-ueber-uns .page-hero{background-image:linear-gradient(90deg,rgba(5,31,51,.98) 0%,rgba(10,57,84,.89) 56%,rgba(7,41,63,.3) 100%),url('https://images.pexels.com/photos/29226620/pexels-photo-29226620.jpeg?auto=compress&cs=tinysrgb&w=2000')}
+.interior-leistungen .page-hero{background-image:linear-gradient(90deg,rgba(5,31,51,.97) 0%,rgba(10,57,84,.87) 52%,rgba(7,41,63,.22) 100%),url('https://images.pexels.com/photos/29226620/pexels-photo-29226620.jpeg?auto=compress&cs=tinysrgb&w=2000')}
 .interior-wasserschaden .page-hero .breadcrumbs,.interior-leckortung .page-hero .breadcrumbs,.interior-bautrocknung .page-hero .breadcrumbs,.interior-ueber-uns .page-hero .breadcrumbs,.interior-leistungen .page-hero .breadcrumbs{color:#c5dae5}
 .interior-wasserschaden .page-hero .eyebrow,.interior-leckortung .page-hero .eyebrow,.interior-bautrocknung .page-hero .eyebrow,.interior-ueber-uns .page-hero .eyebrow,.interior-leistungen .page-hero .eyebrow{color:#b2daec}
 .interior-wasserschaden .page-hero p,.interior-leckortung .page-hero p,.interior-bautrocknung .page-hero p,.interior-ueber-uns .page-hero p,.interior-leistungen .page-hero p{color:#d0e4ee}
