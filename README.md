@@ -1,39 +1,59 @@
 # Bautrocknung Plus
 
-A custom, German-language corporate website for **Bautrocknung Plus GbR** in Friedberg.
+German-language static website for Bautrocknung Plus GbR, Friedberg.
 
-## Deploy to Cloudflare Pages
-
-Connect this GitHub repository as a Pages project:
+## Cloudflare Pages
 
 - Production branch: `main`
 - Framework preset: **None**
 - Build command: `exit 0`
 - Build output directory: `.`
 
-This is a static site. HTML, CSS and JavaScript only. It does not need npm, a build system or API credentials.
+No dependencies, installation, build pipeline, API keys or external fonts.
 
-## Design direction — Atelier
+## Design: Unter der Oberfläche
 
-A restrained, editorial industrial identity:
+A purpose-built architectural identity: mineral paper, oxide red, dark olive,
+editorial typography and an original SVG section through a damp building element.
+The illustration is schematic, not a survey or a live measurement. Service pages
+use distinct palettes, image compositions and practical, service-specific guidance.
 
-- Architectural typography and warm mineral backgrounds
-- Deliberate photo crops, monochromatic print-like treatment
-- Quiet horizontal rules, numbered sections, precise spacing
-- Minimal motion: image reveal and short transitions only
-- No icon packs, particles, dashboard charts, fake sensor readings or animated glow effects
-- Responsive layouts, keyboard-operable process tabs and reduced-motion support
+`assets/design.css` is the complete design system; `assets/site.js` manages
+navigation, current-page state and email-draft forms; `assets/design.js` adds
+progressive motion and keyboard support. Reduced motion is respected. All content
+remains visible without animation or JavaScript. The reporting wizard needs JS;
+phone and email alternatives remain available.
 
-The stylesheet `assets/style.css` contains structural base styles; `assets/atelier.css` contains the current editorial art direction. `assets/site.js` handles navigation and contact flows; `assets/atelier.js` handles the optional process tabs.
+## Contact flow
 
-## Content & functional limits
+Contact and damage-report forms prepare a `mailto:` draft in the visitor's email
+application. They **do not transmit or store submissions**. The visitor must send
+the email. Validation covers required selections, five-digit German postcode,
+contact fields, email format and privacy acknowledgement. There is no upload or
+backend. Photos can be attached in the visitor's email app.
 
-- The contact form and incident report prepare an email draft in the visitor's own email application; **they do not transmit or save data directly**, and the visitor must explicitly send the draft.
-- The prototype uses selected authentic restoration photographs from iDry Columbus licensed CC BY 4.0, credited in the website and Impressum. They are NOT company projects. Replace with the company's own licensed project photos before final launch.
-- Review the Impressum and Datenschutz pages and verify company information prior to placing this website on the public primary domain.
-- The homepage features a clear, static three-step service process and real, appropriately licensed representative photography; no simulated measurements.
-- Existing service and legal-page slugs have redirects in `_redirects`.
+## Images and content
 
-## Site structure
+Photographs are served locally to avoid runtime requests to a third-party image
+server. They are illustrative photographs by iDry Columbus, CC BY 4.0, not company
+projects or staff. Attribution and modification notices appear with the images
+and in the Impressum. Source: https://idrycolumbus.com/free-restoration-photos/.
+The SVG section artwork was created specifically for this website.
 
-`/`, `/leistungen/`, `/wasserschaden/`, `/leckortung/`, `/bautrocknung/`, `/ueber-uns/`, `/kontakt/`, `/schaden-melden/`, `/impressum/`, `/datenschutz/`.
+Existing company details, legal content, routes, redirects, canonical metadata
+and LocalBusiness structured data are preserved. The privacy notice reflects
+local image delivery. Company/legal details still require owner verification
+before switching the business's primary domain.
+
+## Verification (3 November 2026)
+
+Two browser review/refinement passes covered desktop and mobile compositions.
+The homepage was checked in 375, 390, 768, 1024 and 1440 px iframe viewports; all
+nine inner pages were checked at 375 and 1440 px. No horizontal overflow was
+observed. These are desktop Chrome responsive viewports, not physical-device tests.
+
+Verified mobile menu opening, required wizard selections, progression through
+all four steps, invalid/valid postcode behavior, accessible contact inputs and
+FAQ interaction. Static checks cover local links, image files and alt text,
+unique IDs, one H1 per page, JSON-LD syntax and JavaScript syntax. Email delivery
+is not tested because this site has no submission backend.

@@ -13,7 +13,7 @@
       document.body.classList.toggle('locked', open);
     });
     $$('#mobile-nav a').forEach(a => a.addEventListener('click', close));
-    window.addEventListener('resize', () => { if (window.innerWidth > 900) close(); });
+    window.addEventListener('resize', () => { if (window.innerWidth > 760) close(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
   }
 
@@ -55,7 +55,7 @@
     ].join('\n');
     openEmail('Anfrage: ' + line('service') + ' – Bautrocknung Plus', body);
     const status = $('#contact-status');
-    if (status) status.textContent = 'Ihr E-Mail-Programm wurde geöffnet. Bitte prüfen und senden Sie die vorbereitete E-Mail dort.';
+    if (status) status.textContent = 'Bitte senden Sie den Entwurf in Ihrem E-Mail-Programm. Falls sich kein Programm öffnet, schreiben Sie direkt an info@bautrocknung-plus.de.';
   });
 
   const wizard = $('#damage-wizard');
@@ -115,8 +115,8 @@
       'Hinweis: Bitte bei Bedarf Fotos als Anhang im E-Mail-Programm hinzufügen.'
     ].join('\n');
     openEmail('Schadenmeldung – ' + v('damage') + ' – ' + v('postcode'), body);
-    error.style.color='#1b647d';
-    error.textContent='Ihr E-Mail-Programm wurde geöffnet. Bitte senden Sie die vorbereitete E-Mail dort ab; auf dieser Website wurde noch nichts übertragen.';
+    error.style.color='var(--ink)';
+    error.textContent='Bitte senden Sie den Entwurf in Ihrem E-Mail-Programm. Auf dieser Website wurde noch nichts übertragen. Falls sich kein Programm öffnet: info@bautrocknung-plus.de.';
   });
   show(true);
 })();
